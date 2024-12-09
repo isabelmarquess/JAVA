@@ -1,0 +1,27 @@
+Exercício Lista 01 - Collection Array
+javascript
+Copiar código
+// Exercício 1 - Collection Array
+const cores = [];
+for (let i = 0; i < 5; i++) {
+    const cor = prompt(`Digite a cor ${i + 1}:`);
+    cores.push(cor);
+}
+
+console.log("Listar todas as cores:");
+console.log(cores.join("\n"));
+
+console.log("\nOrdenar as cores:");
+console.log(cores.sort().join("\n"));
+Exercício Lista 02 - Collection Set
+javascript
+Copiar código
+// Exercício 1 - Collection Set
+const numerosSet = new Set();
+while (numerosSet.size < 10) {
+    const numero = parseInt(prompt("Digite um número inteiro não repetido:"));
+    numerosSet.add(numero);
+}
+
+console.log("Listar dados do Set:");
+numerosSet.forEach(numero => console.log(numero));
