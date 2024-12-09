@@ -1,0 +1,140 @@
+Atividade 01 – Fila
+javascript
+Copiar código
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(item) {
+        this.items.push(item);
+    }
+
+    dequeue() {
+        return this.items.length > 0 ? this.items.shift() : null;
+    }
+
+    list() {
+        return this.items;
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+}
+
+const queue = new Queue();
+let option;
+
+do {
+    console.log("\nMenu:");
+    console.log("1: Adicionar um novo Cliente na fila");
+    console.log("2: Listar todos os Clientes na fila");
+    console.log("3: Chamar (retirar) uma pessoa da fila");
+    console.log("0: Finalizar o programa");
+
+    option = parseInt(prompt("Digite uma opção:"));
+
+    switch (option) {
+        case 1:
+            const name = prompt("Digite o nome do Cliente:");
+            queue.enqueue(name);
+            console.log("\nFila:");
+            console.log(queue.list().join("\n"));
+            console.log("Cliente Adicionado!");
+            break;
+
+        case 2:
+            console.log("\nLista de Clientes na Fila:");
+            console.log(queue.list().join("\n") || "A Fila está vazia!");
+            break;
+
+        case 3:
+            if (queue.isEmpty()) {
+                console.log("\nA Fila está vazia!");
+            } else {
+                queue.dequeue();
+                console.log("\nFila:");
+                console.log(queue.list().join("\n"));
+                console.log("O Cliente foi Chamado!");
+            }
+            break;
+
+        case 0:
+            console.log("\nPrograma Finalizado!");
+            break;
+
+        default:
+            console.log("\nOpção inválida!");
+    }
+} while (option !== 0);
+Atividade 02 – Pilha
+javascript
+Copiar código
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    push(item) {
+        this.items.push(item);
+    }
+
+    pop() {
+        return this.items.length > 0 ? this.items.pop() : null;
+    }
+
+    list() {
+        return this.items;
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+}
+
+const stack = new Stack();
+let option;
+
+do {
+    console.log("\nMenu:");
+    console.log("1: Adicionar um novo livro na pilha");
+    console.log("2: Listar todos os livros da Pilha");
+    console.log("3: Retirar um livro da pilha");
+    console.log("0: Finalizar o programa");
+
+    option = parseInt(prompt("Digite uma opção:"));
+
+    switch (option) {
+        case 1:
+            const bookName = prompt("Digite o nome do Livro:");
+            stack.push(bookName);
+            console.log("\nPilha:");
+            console.log(stack.list().join("\n"));
+            console.log("Livro adicionado!");
+            break;
+
+        case 2:
+            console.log("\nLista de Livros na Pilha:");
+            console.log(stack.list().join("\n") || "A Pilha está vazia!");
+            break;
+
+        case 3:
+            if (stack.isEmpty()) {
+                console.log("\nA Pilha está vazia!");
+            } else {
+                stack.pop();
+                console.log("\nPilha:");
+                console.log(stack.list().join("\n"));
+                console.log("Um Livro foi retirado da pilha!");
+            }
+            break;
+
+        case 0:
+            console.log("\nPrograma Finalizado!");
+            break;
+
+        default:
+            console.log("\nOpção inválida!");
+    }
+} while (option !== 0);
