@@ -1,0 +1,126 @@
+### **Lista 01 - Laço Condicional If**
+
+#### **Exercício 1: Soma de A + B comparada a C**
+```javascript
+const prompt = require("prompt-sync")();
+
+let a = parseInt(prompt("Digite o número A: "));
+let b = parseInt(prompt("Digite o número B: "));
+let c = parseInt(prompt("Digite o número C: "));
+
+let soma = a + b;
+
+if (soma > c) {
+    console.log(`${a} + ${b} = ${soma} > ${c}`);
+    console.log("A Soma de A + B é Maior do que C");
+} else if (soma < c) {
+    console.log(`${a} + ${b} = ${soma} < ${c}`);
+    console.log("A Soma de A + B é Menor do que C");
+} else {
+    console.log(`${a} + ${b} = ${soma} = ${c}`);
+    console.log("A Soma de A + B é Igual a C");
+}
+```
+
+#### **Exercício 2: Número par ou ímpar e positivo ou negativo**
+```javascript
+const prompt = require("prompt-sync")();
+
+let numero = parseInt(prompt("Digite um número: "));
+
+if (numero % 2 === 0 && numero > 0) {
+    console.log(`O Número ${numero} é par e positivo!`);
+} else if (numero % 2 !== 0 && numero > 0) {
+    console.log(`O Número ${numero} é ímpar e positivo!`);
+} else if (numero % 2 === 0 && numero < 0) {
+    console.log(`O Número ${numero} é par e negativo!`);
+} else {
+    console.log(`O Número ${numero} é ímpar e negativo!`);
+}
+```
+
+---
+
+### **Lista 02 - Laço Condicional Switch**
+
+#### **Exercício 1: Código do produto**
+```javascript
+const prompt = require("prompt-sync")();
+
+let codigo = parseInt(prompt("Código do Produto: "));
+let quantidade = parseInt(prompt("Quantidade: "));
+
+switch (codigo) {
+    case 1:
+        console.log("Produto: Cachorro Quente");
+        console.log(`Valor total: R$ ${(quantidade * 10).toFixed(2)}`);
+        break;
+    case 2:
+        console.log("Produto: X-Salada");
+        console.log(`Valor total: R$ ${(quantidade * 15).toFixed(2)}`);
+        break;
+    case 3:
+        console.log("Produto: X-Bacon");
+        console.log(`Valor total: R$ ${(quantidade * 18).toFixed(2)}`);
+        break;
+    case 4:
+        console.log("Produto: Bauru");
+        console.log(`Valor total: R$ ${(quantidade * 12).toFixed(2)}`);
+        break;
+    case 5:
+        console.log("Produto: Refrigerante");
+        console.log(`Valor total: R$ ${(quantidade * 8).toFixed(2)}`);
+        break;
+    case 6:
+        console.log("Produto: Suco de laranja");
+        console.log(`Valor total: R$ ${(quantidade * 13).toFixed(2)}`);
+        break;
+    default:
+        console.log("Código inválido!");
+}
+```
+
+#### **Exercício 2: Reajuste de salário**
+```javascript
+const prompt = require("prompt-sync")();
+
+let nome = prompt("Nome do colaborador: ");
+let codigo = parseInt(prompt("Código do Cargo: "));
+let salario = parseFloat(prompt("Salário: R$ "));
+
+switch (codigo) {
+    case 1:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Gerente");
+        console.log(`Salário: R$ ${(salario + salario * 0.10).toFixed(2)}`);
+        break;
+    case 2:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Vendedor");
+        console.log(`Salário: R$ ${(salario + salario * 0.07).toFixed(2)}`);
+        break;
+    case 3:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Supervisor");
+        console.log(`Salário: R$ ${(salario + salario * 0.09).toFixed(2)}`);
+        break;
+    case 4:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Motorista");
+        console.log(`Salário: R$ ${(salario + salario * 0.06).toFixed(2)}`);
+        break;
+    case 5:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Estoquista");
+        console.log(`Salário: R$ ${(salario + salario * 0.05).toFixed(2)}`);
+        break;
+    case 6:
+        console.log(`Nome do colaborador: ${nome}`);
+        console.log("Cargo: Técnico de TI");
+        console.log(`Salário: R$ ${(salario + salario * 0.08).toFixed(2)}`);
+        break;
+    default:
+        console.log("Código inválido!");
+}
+```
+
