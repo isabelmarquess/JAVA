@@ -1,0 +1,65 @@
+import readlineSync from "readline-sync";
+import { Colors } from "./util/Colors";
+
+export class Menu {
+  start() {
+    let option: number;
+
+    do {
+      console.clear();
+      console.log(Colors.applyColor("******************************", Colors.yellow));
+      console.log(Colors.applyColor("BANCO DO BRAZIL COM Z", Colors.yellow));
+      console.log(Colors.applyColor("******************************", Colors.yellow));
+
+      console.log(Colors.applyColor("1 - Criar Conta", Colors.green));
+      console.log(Colors.applyColor("2 - Listar todas as Contas", Colors.green));
+      console.log(Colors.applyColor("3 - Buscar Conta por Numero", Colors.green));
+      console.log(Colors.applyColor("4 - Atualizar Dados da Conta", Colors.green));
+      console.log(Colors.applyColor("5 - Apagar Conta", Colors.green));
+      console.log(Colors.applyColor("6 - Sacar", Colors.green));
+      console.log(Colors.applyColor("7 - Depositar", Colors.green));
+      console.log(Colors.applyColor("8 - Transferir valores entre Contas", Colors.green));
+      console.log(Colors.applyColor("9 - Sair", Colors.red));
+
+      console.log(Colors.applyColor("******************************", Colors.yellow));
+
+      option = readlineSync.questionInt(
+        Colors.applyColor("\nEntre com a opção desejada: ", Colors.yellow)
+      );
+
+      switch (option) {
+        case 1:
+          console.log(Colors.applyColor("\nOpção Criar Conta selecionada.", Colors.blue));
+          break;
+        case 2:
+          console.log(Colors.applyColor("\nOpção Listar todas as Contas selecionada.", Colors.blue));
+          break;
+        case 3:
+          console.log(Colors.applyColor("\nOpção Buscar Conta por Numero selecionada.", Colors.blue));
+          break;
+        case 4:
+          console.log(Colors.applyColor("\nOpção Atualizar Dados da Conta selecionada.", Colors.blue));
+          break;
+        case 5:
+          console.log(Colors.applyColor("\nOpção Apagar Conta selecionada.", Colors.blue));
+          break;
+        case 6:
+          console.log(Colors.applyColor("\nOpção Sacar selecionada.", Colors.blue));
+          break;
+        case 7:
+          console.log(Colors.applyColor("\nOpção Depositar selecionada.", Colors.blue));
+          break;
+        case 8:
+          console.log(Colors.applyColor("\nOpção Transferir valores entre Contas selecionada.", Colors.blue));
+          break;
+        case 9:
+          console.log(Colors.applyColor("\nSaindo do sistema...", Colors.red));
+          break;
+        default:
+          console.log(Colors.applyColor("\nOpção inválida! Tente novamente.", Colors.red));
+      }
+
+      if (option !== 9) readlineSync.question(Colors.applyColor("\nPressione Enter para continuar...", Colors.yellow));
+    } while (option !== 9);
+  }
+}
