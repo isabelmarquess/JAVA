@@ -1,0 +1,90 @@
+#arquivoSalarioComAbono.java#
+import java.util.Scanner;
+
+public class SalarioComAbono {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o salário: ");
+        float salario = scanner.nextFloat();
+
+        System.out.print("Digite o abono: ");
+        float abono = scanner.nextFloat();
+
+        float novoSalario = salario + abono;
+
+        System.out.printf("Novo Salário: %.2f%n", novoSalario);
+    }
+}
+#Arquivo: MediaFinal.java#
+import java.util.Scanner;
+
+public class MediaFinal {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a Nota 1: ");
+        float nota1 = scanner.nextFloat();
+
+        System.out.print("Digite a Nota 2: ");
+        float nota2 = scanner.nextFloat();
+
+        System.out.print("Digite a Nota 3: ");
+        float nota3 = scanner.nextFloat();
+
+        System.out.print("Digite a Nota 4: ");
+        float nota4 = scanner.nextFloat();
+
+        float media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        System.out.printf("Média final: %.1f%n", media);
+    }
+}
+#Arquivo: SalarioLiquido.java#
+import java.util.Scanner;
+
+public class SalarioLiquido {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o Salário Bruto: ");
+        float salarioBruto = scanner.nextFloat();
+
+        System.out.print("Digite o Adicional Noturno: ");
+        float adicionalNoturno = scanner.nextFloat();
+
+        System.out.print("Digite as Horas Extras: ");
+        float horasExtras = scanner.nextFloat();
+
+        System.out.print("Digite os Descontos: ");
+        float descontos = scanner.nextFloat();
+
+        float salarioLiquido = salarioBruto + adicionalNoturno + (horasExtras * 5) - descontos;
+
+        System.out.printf("Salário Líquido: %.2f%n", salarioLiquido);
+    }
+}
+#Arquivo: DiferencaDeProdutos.java#
+import java.util.Scanner;
+
+public class DiferencaDeProdutos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o numero1: ");
+        float numero1 = scanner.nextFloat();
+
+        System.out.print("Digite o numero2: ");
+        float numero2 = scanner.nextFloat();
+
+        System.out.print("Digite o numero3: ");
+        float numero3 = scanner.nextFloat();
+
+        System.out.print("Digite o numero4: ");
+        float numero4 = scanner.nextFloat();
+
+        float diferenca = (numero1 * numero2) - (numero3 * numero4);
+
+        System.out.printf("Diferença: %.2f%n", diferenca);
+    }
+}
