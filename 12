@@ -1,0 +1,59 @@
+class Conta {
+    constructor(titular, saldo = 0) {
+        this.titular = titular;  // Nome do titular da conta
+        this.saldo = saldo;      // Saldo inicial da conta (padrão é 0)
+    }
+
+    // Método para depositar dinheiro na conta
+    depositar(valor) {
+        if (valor > 0) {
+            this.saldo += valor;
+            console.log(`Depósito de R$${valor} realizado com sucesso.`);
+        } else {
+            console.log("Valor de depósito inválido.");
+        }
+    }
+
+    // Método para sacar dinheiro da conta
+    sacar(valor) {
+        if (valor <= 0) {
+            console.log("Valor de saque inválido.");
+        } else if (valor > this.saldo) {
+            console.log("Saldo insuficiente.");
+        } else {
+            this.saldo -= valor;
+            console.log(`Saque de R$${valor} realizado com sucesso.`);
+        }
+    }
+
+    // Método para consultar o saldo da conta
+    consultarSaldo() {
+        console.log(`Saldo da conta de ${this.titular}: R$${this.saldo}`);
+    }
+}
+
+module.exports = Conta;
+
+const Conta = require('./model/Conta'); // Importa a classe Conta
+
+class Menu {
+    static iniciar() {
+        // Instanciando duas contas
+        const conta1 = new Conta("João", 500);  // Conta do João com saldo inicial de 500
+        const conta2 = new Conta("Maria", 1000); // Conta da Maria com saldo inicial de 1000
+
+        // Testando os métodos da Conta
+        conta1.consultarSaldo();
+        conta2.consultarSaldo();
+
+        conta1.depositar(200);  // João deposita 200
+        conta1.sacar(50);       // João saca 50
+        conta2.sacar(500);      // Maria saca 500
+        conta2.depositar(300);  // Maria deposita 300
+
+        conta1.consultarSaldo();
+        conta2.consultarSaldo();
+    }
+}
+
+Menu.iniciar();
